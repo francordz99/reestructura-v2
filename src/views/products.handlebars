@@ -1,16 +1,17 @@
-<div>
+<div class="container mt-5">
   <h2>Bienvenido {{user.name}}!</h2>
   <h3>Tu rol es: {{user.role}}</h3>
-  <h3></h3>
-  <h1>Productos</h1>
-  <table>
+  <h1 class="mt-4">Productos</h1>
+  <table class="table">
     <thead>
-      <th>Título</th>
-      <th>Descripción</th>
-      <th>Precio</th>
-      <th>Stock</th>
-      <th>Categoría</th>
-      <th>Detalles / Agregar al Carrito</th>
+      <tr>
+        <th scope="col">Título</th>
+        <th scope="col">Descripción</th>
+        <th scope="col">Precio</th>
+        <th scope="col">Stock</th>
+        <th scope="col">Categoría</th>
+        <th scope="col">Detalles / Agregar al Carrito</th>
+      </tr>
     </thead>
     <tbody>
       {{#each products}}
@@ -21,8 +22,8 @@
         <td>{{this.stock}}</td>
         <td>{{this.category}}</td>
         <td>
-          <a href="/product/{{this._id}}">Ver detalles</a>
-          <button>Agregar al carrito</button>
+          <a href="/product/{{this._id}}" class="btn btn-info btn-sm">Ver detalles</a>
+          <button class="btn btn-primary btn-sm">Agregar al carrito</button>
         </td>
       </tr>
       {{/each}}
@@ -31,16 +32,16 @@
 </div>
 <br />
 <br />
-<div>
+<div class="container">
   {{#if hasPrevPage}}
-  <a href="?page={{prevPage}}">Anterior</a>
+  <a href="?page={{prevPage}}" class="btn btn-secondary">Anterior</a>
   {{/if}}
-  <span>Página {{page}} de {{totalPages}}</span>
+  <span class="mx-2">Página {{page}} de {{totalPages}}</span>
   {{#if hasNextPage}}
-  <a href="?page={{nextPage}}">Siguiente</a>
+  <a href="?page={{nextPage}}" class="btn btn-secondary">Siguiente</a>
   {{/if}}
 </div>
-<button id="logoutButton">Logout</button>
+<button id="logoutButton" class="btn btn-danger mt-3">Logout</button>
 
 <script src="/socket.io/socket.io.js"></script>
 <script src="/js/index.js"></script>

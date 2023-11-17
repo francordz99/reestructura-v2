@@ -1,18 +1,18 @@
-<div>
-  <h1>Carrito</h1>
-  <table>
+<div class="container mt-5">
+  <h1 class="mb-4">Carrito</h1>
+  <table class="table">
     <thead>
       <tr>
-        <th>Producto</th>
-        <th>Cantidad</th>
+        <th scope="col">Producto</th>
+        <th scope="col">Cantidad</th>
       </tr>
     </thead>
     <tbody>
       {{#each cart.products}}
-        <tr data-id={{this.product._id}}>
-          <td>{{this.product}}</td>
-          <td>{{this.quantity}}</td>
-        </tr>
+      <tr data-id={{this.product._id}}>
+        <td>{{this.product}}</td>
+        <td>{{this.quantity}}</td>
+      </tr>
       {{/each}}
     </tbody>
   </table>

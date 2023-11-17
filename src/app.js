@@ -6,7 +6,7 @@ const session = require('express-session');
 const MongoStore = require('connect-mongo');
 const passport = require('passport');
 const initializePassport = require('./config/passport.config');
-const { mongoUrl } = require('./config/config');
+const { config } = require('./config/config.js');
 
 const router = require('./routes/routes');
 const viewsRouter = require('./routes/views.routes');
@@ -19,7 +19,7 @@ const io = new Server(httpServer);
 
 // Conexion a la db
 const connect = async () => {
-    await mongoose.connect(mongoUrl)
+    await mongoose.connect(config.mongo.url)
         .then(() => console.log('Conectado a la base de datos'))
         .catch((err) => console.log(err))
 }
@@ -44,10 +44,10 @@ app.use((req, res, next) => {
 app.use(
     session({
         store: MongoStore.create({
-            mongoUrl: mongoUrl,
+            mongoUrl: config.mongo.url,
             ttl: 600,
         }),
-        secret: "CoderSecret",
+        secret: config.server.secretSession,
         resave: false,
         saveUninitialized: true,
     })
