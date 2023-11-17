@@ -1,0 +1,23 @@
+<div>
+    <h1>Productos en tiempo real</h1>
+    <table>
+        <thead>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Price</th>
+            <th>Stock</th>
+        </thead>
+        <tbody>
+            {{#each products}}
+            <tr data-id={{id}}>
+                <td>{{title}}</td>
+                <td>{{description}}</td>
+                <td>{{price}}</td>
+                <td>{{stock}}</td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+</div>
+<script src="/socket.io/socket.io.js"></script>
+<script src="/js/index.js"></script>"

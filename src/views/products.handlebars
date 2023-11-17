@@ -1,0 +1,47 @@
+<div>
+  <h2>Bienvenido {{user.name}}!</h2>
+  <h3>Tu rol es: {{user.role}}</h3>
+  <h3></h3>
+  <h1>Productos</h1>
+  <table>
+    <thead>
+      <th>Título</th>
+      <th>Descripción</th>
+      <th>Precio</th>
+      <th>Stock</th>
+      <th>Categoría</th>
+      <th>Detalles / Agregar al Carrito</th>
+    </thead>
+    <tbody>
+      {{#each products}}
+      <tr data-id={{this._id}}>
+        <td>{{this.title}}</td>
+        <td>{{this.description}}</td>
+        <td>{{this.price}}</td>
+        <td>{{this.stock}}</td>
+        <td>{{this.category}}</td>
+        <td>
+          <a href="/product/{{this._id}}">Ver detalles</a>
+          <button>Agregar al carrito</button>
+        </td>
+      </tr>
+      {{/each}}
+    </tbody>
+  </table>
+</div>
+<br />
+<br />
+<div>
+  {{#if hasPrevPage}}
+  <a href="?page={{prevPage}}">Anterior</a>
+  {{/if}}
+  <span>Página {{page}} de {{totalPages}}</span>
+  {{#if hasNextPage}}
+  <a href="?page={{nextPage}}">Siguiente</a>
+  {{/if}}
+</div>
+<button id="logoutButton">Logout</button>
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="/js/index.js"></script>
+<script src="/js/logout.js"></script>
