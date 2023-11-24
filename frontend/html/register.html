@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>eMercado - Todo lo que busques está aquí</title>
+    <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+    <link href="./css/bootstrap.min.css" rel="stylesheet">
+    <link href="./css/styles.css" rel="stylesheet">
+</head>
+
+<body>
+    <main class="mt-5">
+        <div class="container">
+            <center>
+                <div class="imagen"></div>
+            </center>
+            <form action="/register" method="POST" id="registerForm">
+                <div class="registro">
+                    <div id="eliminar">
+                        <h2 id="rh2">Registro</h2>
+                        <label for="nombre">Nombre</label>
+                        <input type="text" id="nombre" name="nombre" required>
+
+                        <label for="segundoNombre">Segundo Nombre</label>
+                        <input type="text" id="segundoNombre" name="segundoNombre" required>
+
+                        <label for="apellido">Apellido</label>
+                        <input type="text" id="apellido" name="apellido" required>
+
+                        <label for="segundoApellido">Segundo Apellido</label>
+                        <input type="text" id="segundoApellido" name="segundoApellido" required>
+
+                        <label for="edad">Edad</label>
+                        <input type="number" id="edad" name="edad" required>
+
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+
+                        <label for="telefono">Teléfono</label>
+                        <input type="number" id="telefono" name="telefono" required>
+
+                        <label for="passwordRegistro">Contraseña</label>
+                        <input type="password" id="passwordRegistro" name="password" required>
+
+                        <div class="cartelYes" id="cartelYesRegistro"></div>
+                        <div class="cartelNo" id="cartelNoRegistro"></div>
+                    </div>
+                    <div class="botones">
+                        <button type="submit" id="registrarBtn">Registrarse</button>
+                    </div>
+                </div>
+            </form>
+
+            <center>
+                <p>¿Ya tienes una cuenta? <a href="/login">Inicia sesión</a></p>
+            </center>
+
+        </div>
+        <div class="parrafo">
+            <p id="p"></p>
+        </div>
+        </div>
+    </main>
+    <footer class="text-muted">
+        <div class="container">
+            <p class="float-end">
+                <a href="/"></a>
+            </p>
+            <p>Este sitio forma parte de <a href="https://jovenesaprogramar.edu.uy/" target="_blank">Jovenes a
+                    Programar</a>
+            </p>
+        </div>
+    </footer>
+    <script src="js/sweetalert.js"></script>
+</body>
+
+</html>

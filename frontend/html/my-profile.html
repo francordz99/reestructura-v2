@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>eMercado - Todo lo que busques está aquí</title>
+  <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/styles.css" rel="stylesheet">
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light p-1">
+    <div class="container">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav w-100 justify-content-between">
+          <li class="nav-item">
+            <a class="nav-link" href="/">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/categories">Categorías</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/sell">Vender</a>
+          </li>
+          <li class="nav-item">
+            <div id="menu" class="dropdown">
+              <button class="custom-link"></button>
+              <div class="dropdown-content">
+                <a href="/cart">Mi Carrito</a>
+                <a href="/my-profile">Mi Perfil</a>
+                <center><button id="modoBoton">☼</button></center>
+              </div>
+            </div>
+          </li>
+          <li class="nav-item">
+            <form method="post" action="/logout">
+              <button type="submit" class="cerrarSesion">Cerrar Sesión</button>
+            </form>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <main>
+    <div id="profileInput" class="container">
+      <h2 id="userTitle" class="text-center mt-5">Perfil del usuario</h2>
+
+      <center>
+        <div class="custom-file">
+          <img src="" alt="Profile Photo" class="img-rounded mt-3" id="profileImage">
+          <input type="file" id="imageInput" accept="image/*" style="display: none;"><br>
+          <button id="changeImageBtn" class="btn btn-light mt-2">Cambiar Imagen</button>
+          <button id="deletImageBtn" class="btn btn-light mt-2">X</button>
+        </div>
+      </center>
+
+      <form id="perfilForm" action="/details" method="POST">
+        <!-- Agrega el campo oculto para simular una solicitud PUT -->
+
+        <div class="row">
+          <div class="col-md-6 my-2">
+            <label for="inputNombre">Nombre:</label>
+            <input id="inputNombre" type="text" class="form-control" aria-label="Primer nombre" name="nombre"
+              placeholder="nombre" required>
+          </div>
+
+          <div class="col-md-6 my-2">
+            <label for="inputSegundoNombre">Segundo nombre:</label>
+            <input id="inputSegundoNombre" type="text" class="form-control" name="segundoNombre"
+              aria-label="Segundo nombre" placeholder="segundo nombre" required>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-6 my-2">
+            <label for="inputApellido">Apellido:</label>
+            <input id="inputApellido" type="text" class="form-control" aria-label="Primer apellido" name="apellido"
+              placeholder="apellido" required>
+          </div>
+
+          <div class="col-md-6 my-2">
+            <label for="inputSegundoApellido">Segundo apellido:</label>
+            <input id="inputSegundoApellido" type="text" class="form-control" aria-label="Segundo apellido"
+              name="segundoApellido" placeholder="segundo apellido" required>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-6 my-2">
+            <label for="inputEmail">Correo:</label>
+            <input id="inputEmail" type="email" class="form-control" aria-label="e-mail" name="email"
+              placeholder="email" required disabled>
+          </div>
+
+          <div class="col-md-6 my-2">
+            <label for="inputNumCelular">Teléfono:</label>
+            <input id="inputNumCelular" type="number" class="form-control" aria-label="telefono" name="telefono"
+              placeholder="numero de telefono" required>
+          </div>
+        </div>
+
+        <center><button id="guardarPerfil" class="btn btn-success mt-3">Guardar Perfil</button></center>
+      </form>
+
+
+
+    </div>
+  </main>
+  <footer class="text-muted">
+    <div class="container">
+      <p class="float-end">
+        <a href="/">Volver al inicio</a>
+      </p>
+      <p>Este sitio forma parte de <a href="https://jovenesaprogramar.edu.uy/" target="_blank">Jovenes a Programar</a>
+      </p>
+    </div>
+  </footer>
+  <!-- -------SCRIPTS------- -->
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="js/init.js"></script>
+  <script src="js/my-profile.js"></script>
+</body>
+
+</html>

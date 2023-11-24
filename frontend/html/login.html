@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>eMercado - Todo lo que busques está aquí</title>
+  <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/styles.css" rel="stylesheet">
+</head>
+
+<body>
+  <main class="mt-5">
+    <div class="container">
+      <center>
+        <div class="imagen"></div>
+      </center>
+      <div class="registro">
+        <form id="loginForm" action="/login" method="POST">
+          <div id="eliminar">
+            <h2 id="rh2">Inicio de sesión</h2>
+            <label for="username">Correo</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="contraseña">Contraseña</label>
+            <input type="password" id="password" name="password" required>
+
+            <div class="cartelYes" id="cartelYes"></div>
+            <div class="cartelNo" id="cartelNo"></div>
+          </div>
+          <div id="botones">
+            <button id="regBtn" type="submit">Log-in</button>
+          </div>
+        </form>
+      </div>
+
+      <center>
+        <p>¿No tienes una cuenta? <a href="/register">Registrate</a></p>
+      </center>
+    </div>
+  </main>
+  <footer class="text-muted">
+    <div class="container">
+      <p class="float-end">
+        <a href="/"></a>
+      </p>
+      <p>Este sitio forma parte de <a href="https://jovenesaprogramar.edu.uy/" target="_blank">Jovenes a Programar</a>
+      </p>
+    </div>
+  </footer>
+  <!-- -------SCRIPTS------- -->
+  <script src="js/login.js"></script>
+</body>
+
+</html>
